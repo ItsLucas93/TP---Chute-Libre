@@ -107,7 +107,7 @@ class projectile:
         fig = f.add_subplot(111)
         self.canvas = FigureCanvasTkAgg(f, frame2)
         self.canvas.get_tk_widget().grid(pady=5)
-        f.suptitle('Trajectoire du projectile - tau =' + str(tau) + ' s')
+        f.suptitle('Trajectoire du projectile')
         fig.scatter(X_Euler_list, Z_Euler_list, s=1)
 
     def destroygf(self):
@@ -123,7 +123,7 @@ class flecheVec:
             self.canvas.get_tk_widget().grid(row=1, padx=5)
             f.suptitle('Vecteurs')
             fig.scatter(x_Euler_list, z_Euler_list, s=1)
-            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1, color='r')
+            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1, color='red')
 
         else:
             derive_Euler_list = []
@@ -136,7 +136,7 @@ class flecheVec:
             self.canvas.get_tk_widget().grid(row=1, padx=5)
             f.suptitle('Vecteurs')
             fig.scatter(x_Euler_list, z_Euler_list, s=1)
-            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 1, derive_Euler_list[::-4], color='r')
+            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 1, derive_Euler_list[::-4], color='red')
 
     def destroygf(self):
         self.canvas.get_tk_widget().destroy()
@@ -166,7 +166,8 @@ class flecheVecGrav:
             f.suptitle('Vecteur')
             fig.scatter(x_Euler_list, z_Euler_list, s=1)
             fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1)
-            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1, color='r')
+            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1, color='green')
+
         else:
             derive_Euler_list = []
             for x in x_Euler_list:
@@ -179,7 +180,7 @@ class flecheVecGrav:
             f.suptitle('Vecteur et gravitation')
             fig.scatter(x_Euler_list, z_Euler_list, s=1)
             fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 0, -1)
-            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 1, derive_Euler_list[::-4], color='r')
+            fig.quiver(x_Euler_list[::-4], z_Euler_list[::-4], 1, derive_Euler_list[::-4], color='green')
 
     def destroygf(self):
         self.canvas.get_tk_widget().destroy()
