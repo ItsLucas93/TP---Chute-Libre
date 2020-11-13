@@ -11,7 +11,6 @@ window.configure(background='white')
 
 frame1 = tkinter.Frame(window)
 frame2 = tkinter.Frame(window)
-frame3 = tkinter.Canvas(window)
 
 CheckVar1 = IntVar()
 CheckVar2 = IntVar()
